@@ -9,6 +9,6 @@ was used in this project:
 - CSS3
 - SCSS
 
-The code is using a fake token, to preserve the real one, so you need to create a free account on https://openweathermap.org and with the token in your possession you need to set the token on app.js on '/getTemperature'
+The code is using a fake token, to preserve the real one, so you need to create a free account on https://openweathermap.org and with the token in your possession you need to set the token on '/getTemperature' on app.js
 
 after you set it up the token edit the HTML file to remove the 'em' tag line
