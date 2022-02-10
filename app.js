@@ -17,12 +17,14 @@ app.get("/getTemperature", (req,res) => {
     const token = "eag"; //fake token
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=br&appid=${token}`;
     https.get(url, (data) => {
+        //if you have a valid toke above coment out the live bellow
+        res.json({"country":'BR',"icon":'10d',"weather": 'Raining',"city":'São Paulo',"temp": 25});
         data.on("data", (d) => {
             const jsonData = JSON.parse(d);
-            // uncoment line bellow and comment it out the line after if you have a valid token
+            // uncoment line bellow if you have a valid token
             //res.json({"country": jsonData.sys.country,"icon":jsonData.weather[0].icon,"weather": jsonData.weather[0].description,"city":jsonData.name,"temp": jsonData.main.temp});
-            res.json({"country": BR,"icon":'10d',"weather": 'Clear Sky',"city":'São Paulo',"temp": 25});
         });
+
     });
     
 });
