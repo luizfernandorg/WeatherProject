@@ -17,6 +17,15 @@ input {
   margin: 0 0.5em;
 }
 
+select {
+  width: 8em;
+  padding: 0.8em;
+  border: none;
+  background-color: #eef1f5;
+  border-radius: .4em;
+  margin: 0 0.5em;
+}
+
 button {
   width: 10em;
   padding: 0.5em;

@@ -14,14 +14,16 @@ app.get("/", (req,res) => {
 
 app.get("/getTemperature", (req,res) => {
     const city = req.query.q;
-    const token = "eag"; //fake token, put a real one here
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=br&appid=${token}`;
+    const unit = req.query.unit;
+    const token = "aed"; //fake key, put a real one here
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&lang=br&appid=${token}`;
     https.get(url, (data) => {
-        //if you have a valid toke above coment out the live bellow
+        //if you have a valid key above coment out the live bellow
         res.json({"country":'BR',"icon":'10d',"weather": 'Raining',"city":'São Paulo',"temp": 25});
         data.on("data", (d) => {
             const jsonData = JSON.parse(d);
-            // uncoment line bellow if you have a valid token
+            console.log(jsonData);
+            // uncoment line bellow if you have a valid key
             //res.json({"country": jsonData.sys.country,"icon":jsonData.weather[0].icon,"weather": jsonData.weather[0].description,"city":jsonData.name,"temp": jsonData.main.temp});
         });
 
