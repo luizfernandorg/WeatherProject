@@ -3,11 +3,12 @@ $("#submit").on("click", (e) => {
     const city = $("#city").val();
     const unit = $("#unit").val();
     if(city !== ""){
-        $.getJSON(
-            `/getTemperature?q=${city}&unit=${unit}`,
+        $.post(
+            `/getTemperature`,
+            { 'q': city, 'unit': unit },
             (data) => {
                 $(".city").text(data.city + ` - ${data.country}` );
-                if(unit === "Celsius"){
+                if(unit === "metric"){
                     $(".temperture").text(data.temp + " °C");
                 }else{
                     $(".temperture").text(data.temp + " °F");
