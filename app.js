@@ -18,7 +18,6 @@ app.get("/getTemperature", (req,res) => {
     https.get(url, (data) => {
         data.on("data", (d) => {
             const jsonData = JSON.parse(d);
-            console.log(jsonData);
             res.json({"country": jsonData.sys.country,"icon":jsonData.weather[0].icon,"weather": jsonData.weather[0].description,"city":jsonData.name,"temp": jsonData.main.temp});
         });
     });
