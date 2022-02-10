@@ -14,11 +14,14 @@ app.get("/", (req,res) => {
 
 app.get("/getTemperature", (req,res) => {
     const city = req.query.q;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=br&appid=f8e89b9aed3d3b70614e2e52f758d903`;
+    const token = "eag"; //fake token
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=br&appid=${token}`;
     https.get(url, (data) => {
         data.on("data", (d) => {
             const jsonData = JSON.parse(d);
-            res.json({"country": jsonData.sys.country,"icon":jsonData.weather[0].icon,"weather": jsonData.weather[0].description,"city":jsonData.name,"temp": jsonData.main.temp});
+            // uncoment line bellow and comment it out the line after if you have a valid token
+            //res.json({"country": jsonData.sys.country,"icon":jsonData.weather[0].icon,"weather": jsonData.weather[0].description,"city":jsonData.name,"temp": jsonData.main.temp});
+            res.json({"country": BR,"icon":'10d',"weather": 'Clear Sky',"city":'São Paulo',"temp": 25});
         });
     });
     
