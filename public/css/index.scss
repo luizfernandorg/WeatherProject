@@ -1,0 +1,49 @@
+* {
+    margin: 0.2em 0.2em;
+    padding: 0;
+}
+.container {
+    padding: 1em;
+    text-align: center;
+}
+input {
+    width: 15em;
+    padding: 0.8em;
+    border: none;
+    background-color: rgb(238, 241, 245);
+    border-radius: .4em;
+    margin: 0 0.5em;
+}
+button {
+    width: 10em;
+    padding: 0.5em;
+    color: white;
+    background-color: rgb(73, 73, 143);
+    border-radius: 0.4em;
+}
+#result {
+    display: none;
+    width: 23.0em;
+    height: 15em;
+    margin: 0.8em auto;
+    background-color: aliceblue;
+    text-align: center;
+    .header {
+        background-color: rgb(73, 73, 143);
+        color: white;
+        margin: 0;
+        padding: 0.3em;
+    }
+    .body {
+        height: 11.0em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .wheather{
+            text-align: left;
+            h3 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
