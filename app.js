@@ -14,7 +14,7 @@ app.get("/", (req,res) => {
 
 app.get("/getTemperature", (req,res) => {
     const city = req.query.q;
-    const token = "eag"; //fake token
+    const token = "eag"; //fake token, put a real one here
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=br&appid=${token}`;
     https.get(url, (data) => {
         //if you have a valid toke above coment out the live bellow
