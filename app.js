@@ -18,12 +18,12 @@ app.get("/getTemperature", (req,res) => {
     const token = "aed"; //fake key, put a real one here
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&lang=br&appid=${token}`;
     https.get(url, (data) => {
-        //if you have a valid key above coment out the live bellow
+        //if you have a valid key above comment out the line below
         res.json({"country":'BR',"icon":'10d',"weather": 'Raining',"city":'São Paulo',"temp": 25});
         data.on("data", (d) => {
             const jsonData = JSON.parse(d);
             console.log(jsonData);
-            // uncoment line bellow if you have a valid key
+            // uncomment the line below if you have a valid key
             //res.json({"country": jsonData.sys.country,"icon":jsonData.weather[0].icon,"weather": jsonData.weather[0].description,"city":jsonData.name,"temp": jsonData.main.temp});
         });
 
